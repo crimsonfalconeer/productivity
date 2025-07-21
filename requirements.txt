@@ -1,0 +1,6 @@
+pandas>=2.0
+pyarrow>=15.0
+openpyxl>=3.1
+streamlit>=1.35
+groq>=0.5               # official client :contentReference[oaicite:0]{index=0}
+python-dotenv>=1.0      # nice for loading .env in dev
