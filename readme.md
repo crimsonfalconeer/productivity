@@ -63,7 +63,7 @@ project_root/
 ├── pyproject.toml
 ├── .env.example          ← template for secrets (not committed)
 └── README.md
-
+```
 
 ---
 
