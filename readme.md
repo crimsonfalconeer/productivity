@@ -24,8 +24,8 @@
 
 
 
-````markdown
-# XLSX → Parquet + Groq Hello-World 🛠️
+
+# XLSX → Parquet + Groq Hello-World
 
 A tiny toolbox that does two things:
 
@@ -63,7 +63,7 @@ project_root/
 ├── pyproject.toml
 ├── .env.example          ← template for secrets (not committed)
 └── README.md
-````
+
 
 ---
 
