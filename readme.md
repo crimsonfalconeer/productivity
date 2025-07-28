@@ -9,25 +9,35 @@
 4a. Tkinter (Standalone)
 4b. Streamlit (Web Based)
 
+5. **NEW: AI-Powered Data Analysis**
+5a. Display all headers and dimensions in the UI
+5b. Allow users to input analysis instructions
+5c. Generate Python code using Groq AI
+5d. Execute the code locally and display results
 
 ## API Keys / LLM Interface
 
 1. Create a Groq account (free)
 2. Get an API key 
-3. Store the key safely on your machine 
+3. Store the key safely on your machine
 4. Write a "Hello World" program to interface with Groq.
 4a. Try a small language model (8b)
 4b. Try a large language model (70b)
 5. Output inference times
 6. Output total token usage
 
+7. **NEW: AI Data Analysis**
+7a. Generate Python code for data analysis tasks
+7b. Execute generated code safely on local data
+7c. Display results and performance metrics
 
 
 
 
-# XLSX → Parquet + Groq Hello-World
 
-A tiny toolbox that does two things:
+# XLSX → Parquet + Groq Hello-World + AI Data Analysis
+
+A powerful toolbox that does three things:
 
 1. **Data converter**  
    *Load any `.xlsx`, preview the full sheet, and save it as a
@@ -35,9 +45,14 @@ A tiny toolbox that does two things:
    Streamlit web UI.
 
 2. **Groq LLM demo**  
-   A minimal “Hello, world!” that calls Groq’s hosted Llama-3 models
+   A minimal "Hello, world!" that calls Groq's hosted Llama-3 models
    (8 B **instant** & 70 B **versatile**), then prints latency and token
    usage.
+
+3. **AI-Powered Data Analysis**  
+   *Upload your spreadsheet, describe what you want to analyze, and let AI
+   generate and execute the code for you!* Supports natural language
+   instructions like "sort by column X" or "calculate the sum of column Y".
 
 ---
 
@@ -55,13 +70,15 @@ project_root/
 │   └── llm/              ← Groq demo code lives here
 │       ├── __init__.py
 │       ├── config.py     ← loads `GROQ_API_KEY`
-│       └── hello.py      ← runs the small / large model
+│       ├── hello.py      ← runs the small / large model
+│       └── data_analyzer.py ← NEW: AI data analysis
 ├── ui/
-│   ├── tkinter_app.py    ← desktop UI
-│   └── streamlit_app.py  ← web UI
+│   ├── tkinter_app.py    ← desktop UI (enhanced with AI)
+│   └── streamlit_app.py  ← web UI (enhanced with AI)
 ├── requirements.txt
 ├── pyproject.toml
 ├── .env.example          ← template for secrets (not committed)
+├── test_ai_analysis.py   ← NEW: test script for AI features
 └── README.md
 ```
 
@@ -105,7 +122,7 @@ pip install -e
 All modes preview the entire sheet; when you confirm, the original file is
 copied to **`data/raw/`** and its Parquet twin goes to **`data/processed/`**.
 
-### Groq “Hello, world!”
+### Groq "Hello, world!"
 
 ```bash
 # 8-b instant model (default prompt = "Hello, world!")
@@ -115,24 +132,33 @@ python -m src.llm.hello --model small
 python -m src.llm.hello --model large --prompt "Explain transformers in 2 lines"
 ```
 
-Example output:
+### AI-Powered Data Analysis
 
-```json
-{
-  "model": "large",
-  "latency_s": 0.41,
-  "tokens": {
-    "prompt_tokens": 7,
-    "completion_tokens": 24,
-    "total_tokens": 31
-  }
-}
+**NEW FEATURES:**
 
---- assistant ---
-Transformers treat text as sequences of tokens and learn to relate every
-token to every other via self-attention, capturing context in parallel.
-They stack many such attention layers, enabling massive models to reason,
-translate, and generate human-like language.
+1. **Data Structure Display**: View all headers, dimensions, and data types
+2. **Natural Language Instructions**: Describe what you want to analyze
+3. **AI Code Generation**: Groq generates Python code for your analysis
+4. **Safe Execution**: Code runs locally on your data
+5. **Performance Metrics**: See latency and token usage
+
+**Example Usage:**
+
+1. Upload your Excel file
+2. View the data structure and preview
+3. Enter instructions like:
+   - "Sort by Age in descending order"
+   - "Calculate the sum of Salary column"
+   - "Show the top 10 rows sorted by Department"
+   - "Find the average of all numeric columns"
+4. Click "Generate & Execute Analysis"
+5. View results, generated code, and performance metrics
+
+**Test the AI Analysis:**
+
+```bash
+# Test with sample data
+python test_ai_analysis.py
 ```
 
 ---
