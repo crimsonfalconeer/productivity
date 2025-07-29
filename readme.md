@@ -96,6 +96,7 @@ python -m venv .venv
 # source .venv/bin/activate
 
 pip install -e
+#pip install -r .\requirements.txt
 ```
 
 ### 2  Set up your Groq API key
@@ -106,7 +107,7 @@ pip install -e
    ```env
    GROQ_API_KEY=sk-YOUR_KEY
    ```
-
+(Create a `.env` file in your root directory and paste the key (as above))
 ---
 
 ## Usage
