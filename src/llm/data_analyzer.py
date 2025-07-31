@@ -5,6 +5,7 @@ import pandas as pd
 from typing import List, Dict, Any
 from .config import API_KEY
 import groq
+import pdb # for live runtime debugging
 
 MODELS = {
     "small": "llama-3.1-8b-instant",
@@ -44,9 +45,11 @@ Generate ONLY Python code that:
 3. Returns or prints the results clearly
 4. Handles potential errors gracefully
 5. Uses only the headers provided (don't assume other columns exist)
+6. I'm already using the necessary imports (e.g. import pandas as pd), so do not generate these lines in your code.
 
 Return ONLY the Python code, no explanations or markdown formatting.
 """
+   # Added more context so LLM generates code stubs only (instruction 6 above) ^^
 
     tic = time.perf_counter()
     
@@ -117,6 +120,9 @@ def execute_analysis_code(code: str, df: pd.DataFrame) -> Dict[str, Any]:
         from contextlib import redirect_stdout
         
         output = io.StringIO()
+        
+        # pdb.set_trace() # for live runtime debugging
+
         with redirect_stdout(output):
             exec(code, {"__builtins__": {}}, local_vars)
         

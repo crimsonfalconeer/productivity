@@ -1,0 +1,28 @@
+[Employee & Work Insights]
+
+Which department has the highest total hours worked?
+What is the average hourly rate for each department?
+Which employee has the longest duration between their 'Start Date' and 'End Date'?
+What is the average number of hours worked per employee?
+List all employees who have an hourly rate above the average.
+What is the standard deviation of the hourly rates across all employees?
+Which department has the highest average hours worked per person?
+List employees who worked more than 1.5× the average hours.
+What is the correlation between 'Hours Worked' and 'Hourly Rate'?
+Which employee earned the highest total compensation (Hours Worked × Hourly Rate)?
+
+[Date & Time Analysis]
+
+How many employees started before a specific date (e.g., January 1, 2022)?
+Which employees worked for less than 30 days (based on Start and End Date)?
+What is the average employment duration across all employees?
+Which month had the highest number of new employee start dates?
+How many employees ended their jobs in the same month they started?
+
+[Aggregations & Group Comparisons]
+
+Compare the total earnings (Hours Worked × Hourly Rate) by department.
+Which departments have median hourly rates higher than the overall median?
+Which last names appear more than once in the dataset?
+List the top 5 employees with the highest average hours per day (Hours Worked ÷ Days between Start and End).
+Find departments where every employee earns more than $25/hour.
