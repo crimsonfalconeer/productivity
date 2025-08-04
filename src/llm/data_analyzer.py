@@ -45,7 +45,6 @@ Generate ONLY Python code that:
 3. Returns or prints the results clearly
 4. Handles potential errors gracefully
 5. Uses only the headers provided (don't assume other columns exist)
-6. I'm already using the necessary imports (e.g. import pandas as pd), so do not generate these lines in your code.
 
 Return ONLY the Python code, no explanations or markdown formatting.
 """
