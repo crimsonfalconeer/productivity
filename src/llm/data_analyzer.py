@@ -124,7 +124,7 @@ def execute_analysis_code(code: str, df: pd.DataFrame) -> Dict[str, Any]:
         # pdb.set_trace() # for live runtime debugging
 
         with redirect_stdout(output):
-            exec(code, {"__builtins__": {}}, local_vars)
+            exec(code, globals(), local_vars)
         
         captured_output = output.getvalue()
         
